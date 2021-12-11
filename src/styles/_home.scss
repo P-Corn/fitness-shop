@@ -1,0 +1,37 @@
+// HEADER 
+
+// PRODUCTS
+.products {
+    h2 {
+        color: white;
+    }
+
+    .card-image {
+        max-height: 300px;
+    }
+
+    .product-col:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+// TESTIMONIALS 
+.testimonials {
+    .carousel-bg {
+        height: 100%;
+        width: 100%;
+        background: black;
+        overflow: hidden;
+    }
+    
+    .carousel-img {
+        object-fit: cover;
+        opacity: 0.4;
+    }
+
+    h3 {
+        margin-top: 2rem;
+    }
+}
+
+// CHECKOUT
