@@ -3,27 +3,14 @@ import HeaderImage from '../assets/background.png';
 import useViewport from '../hooks/useViewport';
 import ProductCard from '../components/ProductCard';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
-
-const products = [
-  { id: 0, title: 'Kettlebell', price: 15},
-  { id: 1, title: 'Peddlebell', price: 20},
-  { id: 2, title: 'Metalbell', price: 25},
-  { id: 3, title: 'Kell', price: 30},
-]
-
-const testimonials = [
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-]
+import { products, testimonials } from '../data';
 
 const Header = ({ width }) => (
   <Row className='flex-lg-row-reverse align-items-center'>
-    <Col className='mb-3' xs={12} lg={6}>
+    <Col className='header-image' xs={12} lg={7}>
       <Image fluid src={HeaderImage} />
     </Col>
-    <Col className='mt-3' xs={12} lg={6}>
+    <Col className='mt-3' xs={12} lg={5}>
       <h1>Home Fitness Gear</h1>
       <h2 className='body-text'>We provide you with the highest quality home workout equipment for your home gym.</h2>
       <Button className='mt-3 btn-secondary'>Shop Products</Button>
@@ -36,7 +23,7 @@ const Products = () => (
     <h2 className="text-center mb-5">Products</h2>
     <Row className='flex-center mb-5'>
       {products.map(product => (
-        <Col key={product.id} xs={12} className="product-col">
+        <Col key={product.id} xs={12} md={4} className="product-col">
           <ProductCard product={product} />
         </Col>
       ))}
@@ -50,10 +37,53 @@ const Products = () => (
 const Testimonials = () => (
   <div className="testimonials">
     <h2 className="text-center mb-5">Testimonials</h2>
-    <Row className='flex-center'>
-      <TestimonialsCarousel data={ testimonials } />
-      <h3>We love our customers</h3>
-      <h4 className="body-text">Fitness shop has one goal in mind: Provide you with the highest quality workout gear to help you reach your fitness goals. Our products include everything you need for your home gym.</h4>
+    <Row className='flex-center align-items-center'>
+      <Col md={5} className="order-md-2">
+        <TestimonialsCarousel data={ testimonials } />
+      </Col>
+      <Col className="order-md-1" md={7}>
+        <h3>We love our customers</h3>
+        <h4 className="body-text">We are well known for our outstanding customer service and high quality products. Here a the reasons our customers continue to come back.</h4>
+        <hr className="my-4" />
+        <Row>
+          <Col xs={12} sm={6} className="d-flex align-items-start">
+            <div>
+              <i className="bi bi-bag-check text-secondary me-3" style={{ fontSize: 25 }}></i>
+            </div>
+            <div>
+              <h4 className="fw-bold mb-0">Lifetime warranty</h4>
+              <p>All of our products have a lifetime warranty.</p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} className="d-flex align-items-start">
+            <div>
+              <i className="bi bi-person-check text-secondary me-3" style={{ fontSize: 25 }}></i>
+            </div>
+            <div>
+              <h4 className="fw-bold mb-0">Customer service</h4>
+              <p>We aren't robots. You can call us for help!</p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} className="d-flex align-items-start">
+            <div>
+              <i className="bi bi-award text-secondary me-3" style={{ fontSize: 25 }}></i>
+            </div>
+            <div>
+              <h4 className="fw-bold mb-0">Quality products</h4>
+              <p>We have the best products in the industry.</p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} className="d-flex align-items-start">
+            <div>
+              <i className="bi bi-truck text-secondary me-3" style={{ fontSize: 25 }}></i>
+            </div>
+            <div>
+              <h4 className="fw-bold mb-0">Fast shipping</h4>
+              <p>You'll have your new gear within 3 days.</p>
+            </div>
+          </Col>
+        </Row>
+      </Col>
     </Row>
   </div>
 )
@@ -63,12 +93,14 @@ function Home() {
 
   return (
     <div className="bg-light">
-      <Container className="section">
+      <Container className="section header">
         <Header width={width} />
       </Container>
-      <Container className="section bg-primary">
-        <Products />
-      </Container>
+      <div className="bg-primary">
+        <Container className="section">
+          <Products />
+        </Container>
+      </div>
       <Container className="section">
         <Testimonials />
       </Container>

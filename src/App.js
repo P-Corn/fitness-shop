@@ -12,6 +12,7 @@ function App() {
   return (
     <DataProvider>
       <Navbar />
+      <div className="box"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

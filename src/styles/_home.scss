@@ -1,4 +1,20 @@
 // HEADER 
+.navbar-collapse {
+    @include breakpoint(sm) {
+        flex-grow: 0;
+    }
+}
+
+.box {
+    margin-top: 55px;
+}
+
+.header-image {
+    margin-bottom: 1.1rem;
+    @include breakpoint(md) {
+        margin-bottom: 0;
+    }
+}
 
 // PRODUCTS
 .products {
@@ -12,6 +28,10 @@
 
     .product-col:not(:last-child) {
         margin-bottom: 3rem;
+    }
+
+    .card {
+       box-shadow: 0 1rem 2rem rgba(0, 0, 0, .05);
     }
 }
 

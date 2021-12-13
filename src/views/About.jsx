@@ -1,4 +1,4 @@
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
 const testimonials = [

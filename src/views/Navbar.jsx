@@ -8,7 +8,7 @@ export default function MainNavbar() {
   const data = useData();
 
   return (
-    <Navbar variant="dark" expand="md" bg="primary">
+    <Navbar variant="dark" fixed='top' expand="md" bg="primary">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Brand href="#home">Fitness Shop</Navbar.Brand>

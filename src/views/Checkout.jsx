@@ -1,6 +1,6 @@
 import { Container, Col, Row, Form, Button, ListGroup} from 'react-bootstrap';
 import { useCartUpdate, useCart, useData, useDataUpdate } from '../hooks/DataContext';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function Checkout() {
   const cart = useCart();
