@@ -8,7 +8,7 @@ export default function TestimonialsCarousel({ data }) {
         <Carousel.Item className="w-100">
           <div className="carousel-bg">
             <img
-              src={Avatar}
+              src={item.img}
               alt="Third slide"
               className="h-100 w-100 carousel-img"
             />

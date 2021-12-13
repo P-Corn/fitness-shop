@@ -5,6 +5,10 @@ import gloves from './assets/gloves.jpg';
 import jumpRope from './assets/jump-rope.jpg';
 import shoes from './assets/shoes.jpg';
 
+import person1 from './assets/person1.jpg';
+import person2 from './assets/person2.jpg';
+import person3 from './assets/person3.png';
+
 export const products = [
   { id: 0, title: 'Bottle', price: 15, img: bottle },
   { id: 1, title: 'Dumbells', price: 20, img: dumbells },
@@ -15,8 +19,7 @@ export const products = [
 ]
 
 export const testimonials = [
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
-  { name: 'Bob', comment: 'I really like putting the jump rope handles up my butt!' },
+  { name: 'Robert', comment: '"The adjustable dumbells makes having all the weights I need perfect for a home workout!"', img: person1 },
+  { name: 'Matthew & Shayla', comment: '"Working out at home together has really brought us closer in our relationship, and Fitness Shop provides us with everything."', img: person2 },
+  { name: 'Jade', comment: '"The yoga mat is awesome. I was getting tired of slipping on my previous mat. Great quality!"', img: person3 },
 ]

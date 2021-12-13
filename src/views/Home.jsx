@@ -4,8 +4,9 @@ import useViewport from '../hooks/useViewport';
 import ProductCard from '../components/ProductCard';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import { products, testimonials } from '../data';
+import { useNavigate } from 'react-router';
 
-const Header = ({ width }) => (
+const Header = ({ navigate }) => (
   <Row className='flex-lg-row-reverse align-items-center'>
     <Col className='header-image' xs={12} lg={7}>
       <Image fluid src={HeaderImage} />
@@ -13,12 +14,12 @@ const Header = ({ width }) => (
     <Col className='mt-3' xs={12} lg={5}>
       <h1>Home Fitness Gear</h1>
       <h2 className='body-text'>We provide you with the highest quality home workout equipment for your home gym.</h2>
-      <Button className='mt-3 btn-secondary'>Shop Products</Button>
+      <Button onClick={() => navigate('/products')} className='mt-3 btn-secondary'>Shop Products</Button>
     </Col>
   </Row>
 )
 
-const Products = () => (
+const Products = ({ navigate}) => (
   <div className="products">
     <h2 className="text-center mb-5">Products</h2>
     <Row className='flex-center mb-5'>
@@ -29,7 +30,7 @@ const Products = () => (
       ))}
     </Row>
     <div className="d-flex justify-content-center">
-      <Button className="bg-white text-dark">View All Products</Button>
+      <Button onClick={() => navigate('/products')} className="bg-white text-dark">View All Products</Button>
     </div>
   </div>
 )
@@ -89,16 +90,16 @@ const Testimonials = () => (
 )
 
 function Home() {
-  const { width } = useViewport();
+  const navigate = useNavigate();
 
   return (
     <div className="bg-light">
       <Container className="section header">
-        <Header width={width} />
+        <Header navigate={navigate} />
       </Container>
       <div className="bg-primary">
         <Container className="section">
-          <Products />
+          <Products navigate={navigate} />
         </Container>
       </div>
       <Container className="section">

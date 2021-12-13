@@ -7,7 +7,7 @@ const ProductsSection = () => (
     <h2 className="text-center mb-5 text-dark">Products</h2>
     <Row className='flex-center mb-5'>
       {products.map(product => (
-        <Col key={product.id} xs={12} className="product-col">
+        <Col key={product.id} xs={12} md={4} className="product-col">
           <ProductCard product={product} />
         </Col>
       ))}
@@ -18,8 +18,8 @@ const ProductsSection = () => (
 function Products() {
 
   return (
-    <div>
-      <Container className="section bg-light">
+    <div className="bg-light">
+      <Container className="section">
         <ProductsSection />
       </Container>
     </div>
