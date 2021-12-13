@@ -1,12 +1,21 @@
 import { Container, Col, Row, Form, Button, ListGroup} from 'react-bootstrap';
 import { useCartUpdate, useCart, useData, useDataUpdate } from '../hooks/DataContext';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+const myStorage = window.localStorage;
 
 function Checkout() {
+  const navigate = useNavigate();
   const cart = useCart();
   const updateCart = useCartUpdate();
   const data = useData();
   const updateData = useDataUpdate();
+
+  const handleSubmit = (e) => {
+    myStorage.clear();
+    navigate('/');
+    updateData([], 'clear');
+  }
 
   useEffect(() => {
     updateCart();
@@ -19,7 +28,7 @@ function Checkout() {
           <Form.Label>
             First name
           </Form.Label>
-          <Form.Control type="name" />
+          <Form.Control required type="name" />
         </Form.Group>
       </Col>
       <Col sm={6}>
@@ -27,7 +36,7 @@ function Checkout() {
           <Form.Label>
             Last name
           </Form.Label>
-          <Form.Control type="name" />
+          <Form.Control required type="name" />
         </Form.Group>
       </Col>
       <Col xs={12}>
@@ -35,7 +44,7 @@ function Checkout() {
           <Form.Label>
             Email
           </Form.Label>
-          <Form.Control type="email" />
+          <Form.Control required type="email" />
         </Form.Group>
       </Col>
       <Col xs={12}>
@@ -43,7 +52,7 @@ function Checkout() {
           <Form.Label>
             Address
           </Form.Label>
-          <Form.Control type="email" />
+          <Form.Control required type="address" />
         </Form.Group>
       </Col>
       <Col xs={12}>
@@ -59,7 +68,7 @@ function Checkout() {
           <Form.Label>
             Country
           </Form.Label>
-          <Form.Select type="email">
+          <Form.Select required type="email">
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
@@ -169,7 +178,7 @@ function Checkout() {
               <PaymentRadio />
               <PaymentInputs />
               <hr className="my-4"></hr>
-              <Button className="w-100 btn-primary btn-lg" type="submit">Submit Payment</Button>
+              <Button onClick={(e) => handleSubmit(e)} className="w-100 btn-primary btn-lg" type="submit">Submit Payment</Button>
             </Form>
           </Col>
         </Row>

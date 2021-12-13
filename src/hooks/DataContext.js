@@ -46,6 +46,9 @@ export function DataProvider({ children }) {
       dataCopy.splice(index, 1);
       setData([...dataCopy]);
     }
+    if (method === 'clear') {
+      setData([]);
+    }
   }
 
   function setCartContext() {
