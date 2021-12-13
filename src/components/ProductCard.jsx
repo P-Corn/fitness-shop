@@ -1,8 +1,17 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Tooltip, Overlay } from "react-bootstrap";
 import { useDataUpdate } from '../hooks/DataContext';
+import { useRef, useState } from "react";
 
 export default function ProductCard({ product }) {
   const updateData = useDataUpdate();
+  const target = useRef(null);
+  const [show, setShow] = useState(false);
+
+  const handleAddToCart = () => {
+    updateData(product, 'add');
+    setShow(true);
+    setTimeout(() => setShow(false), 1200);
+  }
 
   return (
     <Card className="card">
@@ -12,7 +21,15 @@ export default function ProductCard({ product }) {
         <Card.Text>
           { `$${product.price}` }
         </Card.Text>
-        <Button onClick={() => updateData(product, 'add')} variant="secondary text-light">Add to cart</Button>
+        <Button ref={target} onClick={() => handleAddToCart()} variant="secondary text-light">Add to cart</Button>
+        <Overlay target={target.current} show={show} placement="bottom">
+          {(props) => (
+            <Tooltip id="overlay-example" {...props}>
+              <i className="bi bi-check"></i>
+              Added to cart!
+            </Tooltip>
+          )}
+        </Overlay>
       </Card.Body>
     </Card>
   )
