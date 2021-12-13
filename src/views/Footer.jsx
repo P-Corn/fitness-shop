@@ -9,7 +9,7 @@ function Footer() {
       <Container className="text-light text-center pt-3">
         <h3 className="">Fitness Shop</h3>
         <hr />
-        <Nav as="row">
+        <Nav as="row" className="justify-content-center">
           <Col md={4} className="pb-3">
             <Nav.Link onClick={() => navigate('/')} className="text-light">Home</Nav.Link>
           </Col>

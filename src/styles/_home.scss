@@ -26,8 +26,9 @@
         max-height: 300px;
     }
 
-    .product-col:not(:last-child) {
+    .product-col {
         margin-bottom: 3rem;
+        max-width: 440px;
     }
 
     .card {

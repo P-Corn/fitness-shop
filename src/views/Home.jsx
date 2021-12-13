@@ -22,9 +22,9 @@ const Header = ({ navigate }) => (
 const Products = ({ navigate}) => (
   <div className="products">
     <h2 className="text-center mb-5">Products</h2>
-    <Row className='flex-center mb-5'>
+    <Row className='flex-center mb-1 justify-content-center'>
       {products.map(product => (
-        <Col key={product.id} xs={12} md={4} className="product-col">
+        <Col key={product.id} xs={12} sm={6} md={4} className="product-col">
           <ProductCard product={product} />
         </Col>
       ))}
