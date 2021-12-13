@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
         <Card.Text>
           { `$${product.price}` }
         </Card.Text>
-        <Button onClick={() => updateData(product, 'add')} variant="secondary">Add to cart</Button>
+        <Button onClick={() => updateData(product, 'add')} variant="secondary text-light">Add to cart</Button>
       </Card.Body>
     </Card>
   )

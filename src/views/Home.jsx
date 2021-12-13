@@ -14,7 +14,7 @@ const Header = ({ navigate }) => (
     <Col className='mt-3' xs={12} lg={5}>
       <h1>Home Fitness Gear</h1>
       <h2 className='body-text'>We provide you with the highest quality home workout equipment for your home gym.</h2>
-      <Button onClick={() => navigate('/products')} className='mt-3 btn-secondary'>Shop Products</Button>
+      <Button onClick={() => navigate('/products')} className='mt-3 btn-secondary text-light'>Shop Products</Button>
     </Col>
   </Row>
 )
