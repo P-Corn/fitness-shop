@@ -19,7 +19,7 @@ const Header = ({ navigate }) => (
   </Row>
 )
 
-const Products = ({ navigate}) => (
+const Products = ({ navigate }) => (
   <div className="products">
     <h2 className="text-center mb-5">Products</h2>
     <Row className='flex-center mb-1 justify-content-center'>
